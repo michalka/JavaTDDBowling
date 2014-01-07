@@ -8,24 +8,25 @@ public class Bowling {
 	public static int calculateScore(String frames) {
 		int score = 0;
 		boolean spareFlag = false;
-		boolean strikeFlag = false;
+		int strikeFlag = 0;
 		String[] game = new String[10];
 		game = frames.split(" ");
 		for(String frame : game){
 			int tempScore = 0;
 			if(frame.charAt(0) == 'X'){
 				tempScore = 10;
-				if(spareFlag || strikeFlag){
+				if(spareFlag || strikeFlag > 0){
 					score += tempScore;
+					if(!spareFlag)strikeFlag--;
 					spareFlag = false;
-					strikeFlag = false;
 				}
-				strikeFlag = true;
+				strikeFlag += 2;
 			}
 			else{
 				tempScore += Character.getNumericValue(frame.charAt(1));
-				if(spareFlag){
+				if(spareFlag || strikeFlag % 2 == 1){
 					score += tempScore;
+					if(!spareFlag) strikeFlag--;
 					spareFlag = false;
 				}
 				
@@ -37,9 +38,10 @@ public class Bowling {
 					tempScore += Character.getNumericValue(frame.charAt(1));
 				}
 				
-				if(strikeFlag){
+				
+				if(strikeFlag > 0){
 					score += tempScore;
-					strikeFlag = false;
+					strikeFlag -= 2;
 				}
 			}
 			score += tempScore;
