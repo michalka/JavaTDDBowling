@@ -17,11 +17,21 @@ public class BowlingTest {
 	
 	@Test
 	public void spare(){
-		assertEquals("A spare score should include the first roll of the next frame",13,Bowling.calculateScore("1/ 11"));
+		assertEquals("A spare score should include the roll",13,Bowling.calculateScore("1/ 11"));
 	}
 	
 	@Test
 	public void strike(){
-		assertEquals("A strike score should include the the next frame",14,Bowling.calculateScore("X 11"));
+		assertEquals("A strike score should include the next two balls",14,Bowling.calculateScore("X 11"));
 	}
+	
+	@Test
+	public void twoStrikes(){
+		assertEquals("A strike score should include the next two balls, even if it's in different frames",35,Bowling.calculateScore("X X 11"));
+	}
+	
+	/*@Test
+	public void fullGame(){
+		assertEquals("This is a full game",14,Bowling.calculateScore("X 11 5/ 90 X X "));
+	}*/
 }
