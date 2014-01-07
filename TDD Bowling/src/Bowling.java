@@ -6,7 +6,7 @@ public class Bowling {
 	}
 	
 	public static int calculateScore(String frames) {
-		return 0;
+		return Character.getNumericValue(frames.charAt(0))+Character.getNumericValue(frames.charAt(0));
 	}
 
 }
