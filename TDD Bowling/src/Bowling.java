@@ -16,6 +16,7 @@ public class Bowling {
 				score += tempScore;
 				spareFlag = false;
 			}
+			
 			if(frame.charAt(1) == '/'){
 				tempScore = 10; 
 				spareFlag = true;
