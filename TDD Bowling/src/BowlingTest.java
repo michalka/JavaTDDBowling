@@ -15,4 +15,8 @@ public class BowlingTest {
 		assertEquals("Two frames with two rolls of one should be 4",4,Bowling.calculateScore("11 11"));
 	}
 	
+	@Test
+	public void spare(){
+		assertEquals("A spare should include the first roll of the next frame",13,Bowling.calculateScore("1/ 11"));
+	}
 }
