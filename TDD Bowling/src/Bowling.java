@@ -5,7 +5,7 @@ public class Bowling {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public int CalculateScore() {
+	public static int calculateScore(String frames) {
 		return 0;
 	}
 

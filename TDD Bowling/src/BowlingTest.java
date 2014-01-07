@@ -1,4 +1,4 @@
-package test;
+
 
 import static org.junit.Assert.*;
 
@@ -8,7 +8,7 @@ public class BowlingTest {
 
 	@Test
 	public void testCalculateScore() {
-		fail("Not yet implemented");
+		assertEquals("A frame of all ones should be 20 points",20,Bowling.calculateScore("11 11 11 11 11 11 11 11 11 11"));
 	}
 
 }
