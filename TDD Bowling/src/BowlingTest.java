@@ -8,7 +8,7 @@ public class BowlingTest {
 
 	@Test
 	public void testCalculateScore() {
-		assertEquals("A frame of all ones should be 20 points",20,Bowling.calculateScore("11 11 11 11 11 11 11 11 11 11"));
+		assertEquals("A frame with two rolls of one should be 2",2,Bowling.calculateScore("11"));
 	}
 
 }
