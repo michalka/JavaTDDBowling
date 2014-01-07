@@ -7,8 +7,11 @@ public class Bowling {
 	
 	public static int calculateScore(String frames) {
 		int score = 0;
-		for(int i =0; i< frames.length(); i++){
-			score += Character.getNumericValue(frames.charAt(0));
+		String[] game = new String[10];
+		game = frames.split(" ");
+		for(String frame : game){
+			score += Character.getNumericValue(frame.charAt(0));
+			score += Character.getNumericValue(frame.charAt(1));
 		}
 		return score;
 	}
