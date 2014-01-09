@@ -47,8 +47,15 @@ public class Bowling {
 		}
 		
 		if(frames.length == 10 && frames[9].length()==3){
+			if(frames[9].charAt(0) == 'X'){
+				score += Character.getNumericValue(frames[9].charAt(1));
+			}
 			if(frames[9].charAt(2) == 'X'){
 				score += 10;
+			}
+			else if(frames[9].charAt(2) == '/'){
+				score += 10;
+				score -= Character.getNumericValue(frames[9].charAt(1));;
 			}
 			else{
 				score += Character.getNumericValue(frames[9].charAt(2));
