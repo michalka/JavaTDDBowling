@@ -38,10 +38,10 @@ public class BowlingTest {
 		assertEquals("A strike in the tenth frame should get two bonus rolls",58,Bowling.calculateScore("01 02 03 04 05 06 07 08 09 X12"));
 	}
 	
-	/*@Test
+	@Test
 	public void bonusTurkey(){
 		assertEquals("A turkey in the tenth frame should provide a score of 30 for the frame",75,Bowling.calculateScore("01 02 03 04 05 06 07 08 09 XXX"));
-	}*/
+	}
 	
 	/*@Test
 	public void fullGame(){
