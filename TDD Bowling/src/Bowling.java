@@ -1,17 +1,16 @@
-
 public class Bowling {
 
 	public Bowling() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public static int calculateScore(String frames) {
+	public static int calculateScore(String game) {
 		int score = 0;
 		boolean spareFlag = false;
 		int strikeFlag = 0;
-		String[] game = new String[10];
-		game = frames.split(" ");
-		for(String frame : game){
+		String[] frames = new String[10];
+		frames = game.split(" ");
+		for(String frame : frames){
 			int tempScore = 0;
 			if(frame.charAt(0) == 'X'){
 				tempScore = 10;
@@ -23,7 +22,7 @@ public class Bowling {
 				strikeFlag += 2;
 			}
 			else{
-				tempScore += Character.getNumericValue(frame.charAt(1));
+				tempScore += Character.getNumericValue(frame.charAt(0));
 				if(spareFlag || strikeFlag % 2 == 1){
 					score += tempScore;
 					if(!spareFlag) strikeFlag--;
@@ -45,6 +44,15 @@ public class Bowling {
 				}
 			}
 			score += tempScore;
+		}
+		
+		if(frames.length == 10 && frames[9].length()==3){
+			if(frames[9].charAt(2) == 'X'){
+				score += 10;
+			}
+			else{
+				score += Character.getNumericValue(frames[9].charAt(2));
+			}
 		}
 		return score;
 	}
